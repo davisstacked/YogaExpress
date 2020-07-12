@@ -5,6 +5,9 @@ const PoseSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    difficulty: String,
+    Benefits: [String],
+    Description: String
 }, {timestamps: true});
 
 module.exports = mongoose.model('Pose', PoseSchema);
