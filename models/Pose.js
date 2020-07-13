@@ -68,11 +68,42 @@ const poseDatabase = [
         img: "../public/images/legsUpTheWallPose.png"
     },
     {
+        // 10th pose
         name: "Locust Pose",
         benefits: ["improves posture", "helps relieve stress", "stretches the shoulders, chest, belly and thighs"],
         description: "preps beginners for deeper backbends, strengthening the back of the torso, legs and arms",
         img: "../public/images/locustPose.png"          
     },
+    {
+        // 11th pose
+        name: "Reclining Hand-to-Big-Toe Pose",
+        benefits:["impoves digestion", "strengthens the knees", "stretches hips, thighs, hamstrings, groins and calves"],
+        description: "the aching back, tight hamstring cure",
+        img: "../public/images/recliningHandToBigToePose.png"
+    },
+    {
+        // 12th pose
+        name: "Plow Pose",
+        benefits:["reduces stess and fatigue", "stimulates the abdominal organs and the thyroid gland"],
+        description: "reduces backache and helps you get to sleep",
+        img: "../public/images/plowPose.png"
+    },
+    { 
+        // 13th pose
+        name: "Revolved Side Angle Pose",
+        benefits:["improves balance", "increases stamina", "improves digestion and aids elimination"],
+        description: "requires a lot of flexibility to twist so deeply and ground the back heel",
+        img: "../public/images/revolvedSideAnglePose.png"
+
+    },
+    {
+        // 14th pose
+        name: "Half Lord of the Fishes Pose",
+        benefits:["energizes the spine", "stimulates the liver and kidneys", "stretches the shoulders, hips, and neck"],
+        description: "energizes the spine and stimulates the digestive fire",
+        img: "../public/images/halfLordOfTheFishesPose.png"
+    },
+    
 ]
 
 
