@@ -1,1 +1,48 @@
-<h1>hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/main.css">
+  <title>Yoga Express</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/sequences">Sequences</a>
+        </li>
+        <li>
+          <a href="/sequences/new">New Sequence</a>
+        </li>
+        <li>
+          <a href="/poses">Poses</a>
+        </li>
+        <li>
+            <a href="/about">About</a>
+        </li>
+        <li>
+            <a href="/history-of-yoga">History of Yoga</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Add New Sequence</h1>
+
+    <form action="/sequences" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" />
+
+        <button type="submit">Add Sequence</button>
+    </form>
+
+</main>
+
+</body>
+</html>
