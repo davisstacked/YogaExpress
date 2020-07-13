@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/main.css">
+  <title>Yoga Express</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/sequences">Sequences</a>
+        </li>
+        <li>
+          <a href="/sequences/new">New Sequence</a>
+        </li>
+        <li>
+          <a href="/poses">Poses</a>
+        </li>
+        <li>
+            <a href="/about">About</a>
+        </li>
+        <li>
+            <a href="/history-of-yoga">History of Yoga</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Poses Page</h1>
+
+    <% poses.forEach(pose => { %>
+          <h4>
+             <a href="/poses/<%= pose._id %>">
+                <%= pose.title %>
+            </a>
+         </h4>   
+
+        <% }) %> 
+  </main>
+
+</body>
+</html>
