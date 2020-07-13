@@ -49,7 +49,7 @@ router.post('/', (req, res) => {
     db.Sequence.create(req.body, (err, newSequence) => {
         if (err) return console.log(err);
 
-        //Log the new author
+        //Log the new sequence
         console.log('New Sequence = ', newSequence);
 
         res.redirect('/sequences');

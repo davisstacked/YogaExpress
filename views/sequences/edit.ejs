@@ -22,6 +22,12 @@
         <li>
           <a href="/poses">Poses</a>
         </li>
+        <li>
+            <a href="/about">About</a>
+        </li>
+        <li>
+            <a href="/history-of-yoga">History of Yoga</a>
+        </li>
       </ul>
     </nav>
   </header>
@@ -29,7 +35,7 @@
   <main>
     <h1>Edit Sequence Page</h1>
 
-    <form action="/sequences/<%= author._id %>?_method=PUT" method="POST">
+    <form action="/sequences/<%= sequence._id %>?_method=PUT" method="POST">
       <label for="name">Name</label>
       <input type="text" id="name" name="name" value="<%= sequence.name %>" />
 
