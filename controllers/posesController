@@ -6,7 +6,6 @@ const db = require('../models');
 
 
 
-
 // Poses Index 
 
 router.get('/', (req, res) => {
@@ -79,7 +78,7 @@ router.get('/:id', (req, res) => {
 //                     })
 //                 })
 //             } else { 
-//                 res.redirect(`/poses/${req.params.id}`);// redirect to articles show route
+//                 res.redirect(`/poses/${req.params.id}`);// redirect to poses show route
 //             }
 //         })
 //     })
