@@ -7,7 +7,7 @@ const PoseSchema = new mongoose.Schema({
     },
     benefits: [String],
     description: String,
-    img: 
+    img: String,
 }, {timestamps: true});
 
 const Pose = mongoose.model('Pose', PoseSchema);
@@ -103,7 +103,42 @@ const poseDatabase = [
         description: "energizes the spine and stimulates the digestive fire",
         img: "../public/images/halfLordOfTheFishesPose.png"
     },
-    
+    {
+        // 15th pose
+        name: "Extended Triangle Pose",
+        benefits: ["improves digestion", "helps relieve stress", "stimulates the abdominal organs"],
+        description: "the quintessential standing pose in many styles of yoga",
+        img: "../public/images/extendedTrianglePose.png"
+    },
+    {
+        // 16th pose
+        name: "Fish Pose",
+        benefits: ["improves posture", "strengthens the muscles of the upper back and back of the neck"],
+        description: "a traditional text calls fish pose the 'destroyer of all diseases",
+        img: "../public/images/fishPose.png"
+    },
+    {
+        // 17th pose
+        name: "Half Moon Pose",
+        benefits: ["improves digestion", "helps relieve stress", "improves coordination and sense of balance"],
+        description: "create leg and ankle strength as you seek stability and extend into this balancing pose",
+        img: "../public/images/halfMoonPose.png"
+    },
+    {
+        // 18th pose
+        name: "Marichi's Pose",
+        benefits: ["stimulates the brain", "stretches the shoulders", "relieves mild backache and hip pain"],
+        description: "sometimes called the 'Sage's Pose', Marichi's Pose is a wise addition to any practice",
+        img: "../public/images/marichisPose.png"
+    },
+    {
+        // 19th pose
+        name: "Revolved Head-to-Knee Pose",
+        benefits: [""],
+        description: "this twisting variation, takes the classic forward bend to the next level of release",
+        img: "../public/images/revolvedHeadToKneePose.png"
+    }
+
 ]
 
 
