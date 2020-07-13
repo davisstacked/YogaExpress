@@ -45,8 +45,34 @@ ul {
   }
 
   img {
-    height: 150px;
-    width: 25%;
+    height: 125px;
+    width: 20%;
     border-radius: 50%;
 
   }
+
+  #history{
+      text-align: center;
+  }
+
+  .underline {
+      text-decoration: underline;
+  }
+
+  article {  
+    display: grid;  
+    grid-template-columns: 1fr 740px 1fr;  
+}
+
+article > \* {  
+    grid-column: 2;  
+}
+
+article > figure {  
+    grid-column: 1 / -1;  
+    margin: 20px 0;  
+}
+
+#two {
+ background-color: lightsalmon;
+}

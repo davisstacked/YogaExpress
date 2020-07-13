@@ -20,32 +20,6 @@ router.get('/', (req, res) => {
 });
 
 
-
-// Poses New - we don't need this for poses.
-
-
-
-
-// // Poses Create - I dont think we need this for poses.
-// router.post('/', (req, res) => {
-//     console.log(req.body);
-//     db.Pose.create(req.body, (err, newPose) => {
-//         if (err) return console.log(err);
-
-//         console.log(newPose);
-//         db.Sequence.findById(req.body.sequenceId, (err, foundSequence) => {
-//             foundSequence.poses.push(newPose);
-//             foundSequence.save((err, savedSequence) => {
-//                 console.log('savedSequence: ', savedSequence);
-//                 res.redirect('/poses');
-//             })
-//         })
-//     })
-// })
-
-
-
-
 // Poses Show
 router.get('/:id', (req, res) => {
     db.Sequence.findOne({'poses': req.params.id})
@@ -64,23 +38,23 @@ router.get('/:id', (req, res) => {
 
 
 
-// // Poses Edit
-//     router.get('/:id/edit', (req, res) => { 
-//         db.Sequence.find({}, (err, allSequences) => {
-//             db.Sequence.findOne({'poses': req.params.id})
-//             .populate({
-//                 path: 'poses',
-//                 match: {_id: req.params.id}
-//             })
-//             .exec((err, foundPoseSequence) => {
-//                 res.render('./poses/edit', {
-//                     pose: foundPoseSequence.poses[0],
-//                     sequences: allSequences, 
-//                     poseSequence: foundPoseSequence
-//                 })
-//             })
-//         })
-//     })
+// Poses Edit
+    router.get('/:id/edit', (req, res) => { 
+        db.Sequence.find({}, (err, allSequences) => {
+            db.Sequence.findOne({'poses': req.params.id})
+            .populate({
+                path: 'poses',
+                match: {_id: req.params.id}
+            })
+            .exec((err, foundPoseSequence) => {
+                res.render('./poses/edit', {
+                    pose: foundPoseSequence.poses[0],
+                    sequences: allSequences, 
+                    poseSequence: foundPoseSequence
+                })
+            })
+        })
+    })
 
 
 
@@ -122,7 +96,7 @@ router.delete('/:id', (req, res) => {
             foundSequence.poses.remove(req.params.id);
             foundSequence.save((err, updatedSequence) => {
                 console.log(updatedSequence);
-                res.redirect('/sequences')
+                res.redirect('/sequences') // i have this redirecting to sequences instead of poses. because you can only delete poses from sequences not from the site"
             })
         })
     })

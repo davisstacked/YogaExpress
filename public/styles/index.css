@@ -1,9 +1,9 @@
-body{
-    background-image: url(http://blog.hostbaby.com/wp-content/uploads/2014/03/PaintSquares_1400x900-1024x658.jpg);
+ body{
+    background-image: url(http://blog.hostbaby.com/wp-content/uploads/2014/03/Trees_1400x900-1024x658.png);
     background-size: initial;
-}
+} 
 
-header {
+ header {
     background-color: #F1F1F1;
     text-align: center;
     padding: 20px;
@@ -50,3 +50,8 @@ ul {
     border-radius: 50%;
 
   }
+
+  .underline {
+    text-decoration: underline;
+} 
+
