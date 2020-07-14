@@ -26,18 +26,18 @@
             <a href="/about">About</a>
         </li>
         <li>
-            <a href="/history-of-yoga">History of Yoga</a>
+            <a href="/history">History of Yoga</a>
         </li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <h1>Sequence Index Page</h1>
+    <h1>My Sequences</h1>
 
     <% if(sequences.length) { %>
         <% sequences.forEach((sequence) => { %>
-            < a href="/sequences/<%= sequence._id %>">
+            <a href="/sequences/<%= sequence._id %>">
             <h4><%= sequence.name %></h4>
         </a>
         <% }) %>
