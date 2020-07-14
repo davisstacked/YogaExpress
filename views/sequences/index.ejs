@@ -8,17 +8,10 @@
 </head>
 <body>
   <header>
-
     <nav>
       <ul>
         <li>
           <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/About">About</a>
-        </li>
-        <li>
-          <a href="/history">History</a>
         </li>
         <li>
           <a href="/sequences">Sequences</a>
@@ -29,17 +22,22 @@
         <li>
           <a href="/poses">Poses</a>
         </li>
+        <li>
+            <a href="/about">About</a>
+        </li>
+        <li>
+            <a href="/history">History of Yoga</a>
+        </li>
       </ul>
     </nav>
-
   </header>
 
   <main>
-    <h1>Sequence Index Page</h1>
+    <h1>My Sequences</h1>
 
     <% if(sequences.length) { %>
         <% sequences.forEach((sequence) => { %>
-            < a href="/sequences/<%= sequence._id %>">
+            <a href="/sequences/<%= sequence._id %>">
             <h4><%= sequence.name %></h4>
         </a>
         <% }) %>

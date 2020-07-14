@@ -8,17 +8,10 @@
 </head>
 <body>
   <header>
-
     <nav>
       <ul>
         <li>
           <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/About">About</a>
-        </li>
-        <li>
-          <a href="/history">History</a>
         </li>
         <li>
           <a href="/sequences">Sequences</a>
@@ -29,9 +22,14 @@
         <li>
           <a href="/poses">Poses</a>
         </li>
+        <li>
+            <a href="/about">About</a>
+        </li>
+        <li>
+            <a href="/history">History of Yoga</a>
+        </li>
       </ul>
     </nav>
-
   </header>
   <main>
     <h1>Poses Page</h1>
@@ -39,10 +37,10 @@
     <% poses.forEach(pose => { %>
           <h4>
              <a href="/poses/<%= pose._id %>">
-                <%= pose.title %>
+              <img src="<%= pose.img %>" alt="image">
+                
             </a>
          </h4>   
-
         <% }) %> 
   </main>
 
