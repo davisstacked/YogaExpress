@@ -7,41 +7,42 @@
   <title>Yoga Express</title>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/sequences">Sequences</a>
-        </li>
-        <li>
-          <a href="/sequences/new">New Sequence</a>
-        </li>
-        <li>
-          <a href="/poses">Poses</a>
-        </li>
-        <li>
-            <a href="/about">About</a>
-        </li>
-        <li>
-            <a href="/history">History of Yoga</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <h1>Pose Show Page</h1>
+    <h1>Mission Show page</h1>
+        <!-- Nav Bar -->
+       <!-- Nav Bar -->
+       <nav>
+            
+        <a href="/mars">Index Page</a> 
+        <a href="/mars/0">Curiosity</a>
+        <a href="/mars/1">Opportunity</a>
+        <a href="/mars/2">Spirit</a>
+        <a href="/mars/3">Sojourner</a>
+        <a href="/mars/4">Rosetta</a>
+    
+</nav>
+        <!-- Name -->
+        <p>
+         <h4>Name:</h4>   <%= miss.name %>
+        </p>
 
-    <h4><strong>Title</strong>: <%= pose.name %></h4>
-    <small>in sequence: <a href="/sequences/<%= sequence._id %>"><%= sequence.name %></a></small>
+        <!-- Launchdate -->
+        <p>
+            <h4>Launch Date:</h4>    <%= miss.launchDate %>
+        </p>
 
-    <p><%= pose.benefits %></p>
-    <p><%= pose.description %></p>
-    <p><%= pose.img %></p>
-  
-  </main>
-  
-</body>
-</html>
+        <!-- Operator -->
+        <p>
+            <h4>Operator:</h4>   <%= miss.operator %>
+        </p>
+
+        <!-- Mission Type -->
+        <p>
+            <h4>Mission Type:</h4>  <%= miss.missionType %>
+        </p>
+
+        <!-- Img -->
+        <p>
+          <img src= "<%= miss.img %>"  alt="">  
+        </p>
+    </body>
+</html>    
