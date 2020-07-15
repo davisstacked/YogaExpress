@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/poses.css">
   <title>Yoga Express</title>
 </head>
 <body>
@@ -32,17 +32,33 @@
     </nav>
   </header>
   <main>
-    <h1>Poses Page</h1>
+    <!-- <h2 class="underline">Poses</h2>
 
     <% poses.forEach(pose => { %>
           <h4>
              <a href="/poses/<%= pose._id %>">
-              <img src="<%= pose.img %>" alt="image">
-                
+              <img id="inline" src="<%= pose.img %>" alt="image">  
             </a>
          </h4>   
+        <% }) %>  -->
 
-        <% }) %> 
+        <table>
+          <tr>
+              <td>
+                <% poses.forEach(pose => { %>
+        <div class="imgContainer">
+                  <div class="img">
+                    <a href="/poses/<%= pose._id %>">
+                      <img id="inline" src="<%= pose.img %>" alt="image">  
+                    </a>                  </div>
+                  <div class="imgButton">
+                      <button value="test">test</button>
+                  </div>
+           </div>
+           <% }) %>  
+              </td>
+          </tr>
+      </table>
   </main>
 
 </body>

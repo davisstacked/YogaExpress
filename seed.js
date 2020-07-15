@@ -124,4 +124,8 @@ const poseDatabase = [
     }
 ];
 
-models.Pose.create(poseDatabase);
+models.Pose.create(poseDatabase, (err, result) => {
+    if (err) console.log(err);
+    console.log('created objects');
+})
+
