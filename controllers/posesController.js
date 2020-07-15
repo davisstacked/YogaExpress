@@ -7,15 +7,18 @@ const db = require('../models');
 
 
 // Poses Index 
-// right now this is querying the database we'd create thru the site for poses. but poses collection is already created.
-//How to connect database? 
 router.get('/', (req, res) => {
-    db.Pose.find({}, (err, allPoses) => {
+      db.Pose.find({}, (err, allPoses) => {
         if (err) return console.log(err);
-        console.log(allPoses);
-        res.render('poses/index', {
-            poses: allPoses,
-        });
+        db.Sequence.find({}, (err, sequences) => {
+            if (err) console.log(err);
+            console.log(allPoses);
+            res.render('poses/index', {
+                poses: allPoses,
+                sequences
+            });
+          })
+      
     });
 });
 
@@ -33,52 +36,50 @@ router.get('/:id', (req, res) => {
 
 
 
-// Poses Edit
-    router.get('/:id/edit', (req, res) => { 
-        db.Sequence.find({}, (err, allSequences) => {
-            db.Sequence.findOne({'poses': req.params.id})
-            .populate({
-                path: 'poses',
-                match: {_id: req.params.id}
-            })
-            .exec((err, foundPoseSequence) => {
-                res.render('./poses/edit', {
-                    pose: foundPoseSequence.poses[0],
-                    sequences: allSequences, 
-                    poseSequence: foundPoseSequence
-                })
-            })
-        })
-    })
 
-
-
-
-//Poses Update - don't know if we need this for poses
-// router.put('/:id/', (req, res) => {
-//     db.Pose.findByIdAndUpdate(
-//         req.params.id,
-//         req.body,
-//         {new: true},
-//         (err, updatedPose) => {
-//         if (err) return console.log(err);
-//         db.Sequence.findOne({'poses': req.params.id}, (err, foundSequence) => {
-//             if (foundSequence._id.toString() !== req.body.sequenceId){
-//                 foundSequence.poses.remove(req.params.id);
-//                 foundSequence.save((err, savedSequence) => {
-//                     db.Sequence.findById(req.body.sequenceId, (err, newSequence) => {
-//                         newSequence.poses.push(updatedPose); 
-//                         newSequence.save((err, savedNewSequence) => {
-//                             res.redirect(`/poses/${req.params.id}`)
-//                         })
-//                     })
+// // Poses Edit
+//     router.get('/:id/edit', (req, res) => { 
+//         db.Sequence.find({}, (err, allSequences) => {
+//             db.Sequence.findOne({'poses': req.params.id})
+//             .populate({
+//                 path: 'poses',
+//                 match: {_id: req.params.id}
+//             })
+//             .exec((err, foundPoseSequence) => {
+//                 res.render('./poses/edit', {
+//                     pose: foundPoseSequence.poses[0],
+//                     sequences: allSequences, 
+//                     poseSequence: foundPoseSequence
 //                 })
-//             } else { 
-//                 res.redirect(`/poses/${req.params.id}`);// redirect to poses show route
-//             }
+//             })
 //         })
 //     })
-// })
+
+
+
+
+// POSES UPDATE
+router.put('/:id/', (req, res) => {
+    db.Pose.findById(
+        req.params.id,
+        // req.body,
+        // {new: true},
+        (err, foundPose) => {
+        if (err) return console.log(err);
+        console.log(req.body);
+        // {$push: {poses: foundPose}}
+        db.Sequence.findById(req.body.sequenceId, (err, foundSequence) => {
+       if (err) return console.log(err);
+       console.log(foundSequence);
+        foundSequence.poses.push(foundPose);
+        foundSequence.save((err, savedSequence) => {
+            if (err) return console.log(err);
+            res.redirect('/poses')
+
+        });
+    })
+})
+})
 
 
 

@@ -52,8 +52,17 @@
                       <img id="inline" src="<%= pose.img %>" alt="image">  
                     </a>                  
                   </div>
-                  <div class="imgButton">
-                      <button value="test">test</button>
+                  <form action="/poses/<%= pose._id %>?_method=PUT" method="POST">
+                    <div>
+                      <label for="sequence">Sequence</label>
+                      <select name="sequenceId" id="sequence">
+                        <% sequences.forEach(sequence => { %>
+                          <option value="<%= sequence._id %>"><%= sequence.name %></option>
+                        <% }) %>
+                      </select>
+                    </div>
+                    <button type="submit">Add to Sequence</button>
+                  </form>
                   </div>
            </div>
            <% }) %>  

@@ -33,6 +33,7 @@ router.get('/:id', (req, res) => {
     .populate({path: 'poses'})
     .exec((err, foundSequence) => {
         if (err) return console.log(err);
+        console.log(foundSequence);
         res.render('sequences/show', {
             sequence: foundSequence,
         });
