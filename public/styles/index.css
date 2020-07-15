@@ -1,17 +1,18 @@
  body{
-    background-image: url(http://blog.hostbaby.com/wp-content/uploads/2014/03/Trees_1400x900-1024x658.png);
+    background-image: url(https://img.wallpapersafari.com/desktop/1920/1080/19/53/zGProm.jpg);
     background-size: initial;
+    text-shadow: 0px -1px 4px rgb(9, 39, 207), 0px -2px 10px rgb(114, 201, 207), 0px -10px 20px #7449c4, 0px -18px 40px blue;
+    font:'BlackJackRegular';
 } 
 
  header {
-    background-color: #F1F1F1;
     text-align: center;
     padding: 20px;
+    background-color: #7449c4;
   }
 
 nav {
     overflow: hidden;
-    background-color: #333;
 }
 
 nav a{
@@ -51,4 +52,49 @@ ul {
 img {
   width: 50%;
   border-radius: 50%;
+  height: 400px;
+}
+
+.img {
+  background-image: url(https://lh3.googleusercontent.com/proxy/Bz_63qVXcNhiVq7iq5ZRfv3XKPm88E48a1fBYDl9S_ertJqXjKsMSEmk2xgVOpukQGN0JyNo1lRgbE6rk5N_PN4-cA6gEFQ);
+  background-size: 100%;
+  border-radius: 50%;
+}
+
+#btnBegin{
+  color: rgb(9, 2, 36);
+}
+
+#foot {
+  background-color: #7449c4;
+}
+
+.siteFooterBar {
+  position: fixed;
+  bottom: 0;
+  padding-top: 10px;
+  width: 100%;
+  box-shadow: 0px 0px 25px rgb(207, 207, 207);
+  height: 50px;
+  color: #9B9B9B;
+  background: #F3F3F3;
+}
+
+.content {
+  display: block;
+  padding: 10px;
+  margin: 0px auto;
+  text-align: center;
+  font: 25px Georgia, "Times New Roman", Times, serif;
+  font-size: 14px;
+  width:250px;
+}
+.foot {
+display:inline;
+  line-height: 70px;
+}
+.content img {
+height:70px;
+  width: 70px;
+  float:left;
 }
