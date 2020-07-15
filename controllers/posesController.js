@@ -7,7 +7,8 @@ const db = require('../models');
 
 
 // Poses Index 
-
+// right now this is querying the database we'd create thru the site for poses. but poses collection is already created.
+//How to connect database? 
 router.get('/', (req, res) => {
     db.Pose.find({}, (err, allPoses) => {
         if (err) return console.log(err);
@@ -21,19 +22,14 @@ router.get('/', (req, res) => {
 
 // Poses Show
 router.get('/:id', (req, res) => {
-    db.Sequence.findOne({'poses': req.params.id})
-    .populate({
-        path: 'poses',
-        match: {_id: req.params.id}
-    })
-    .exec((err, foundSequence) => {
-        console.log('sequence: ', foundSequence);
-        res.render('poses/show', {
-            pose: foundSequence.poses[0],
-            sequence: foundSequence
+    db.Pose.findById(req.params.id, (err, foundPose) => {
+        if (err) return console.log(err);  
+            res.render('poses/show', {
+            pose: foundPose,
+            });
         });
     });
-});
+
 
 
 

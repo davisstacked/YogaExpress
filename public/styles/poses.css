@@ -38,15 +38,42 @@ ul {
 
   main {
       text-align: center;
-  }
+  } 
 
-  div {
+   /* div {
       text-align: center;
-  }
+  } */
 
   img {
     height: 150px;
-    width: 25%;
+    width: 100px;
     border-radius: 50%;
+  } 
 
-  }
+   #inline {
+      float: left;
+      height: 45px;
+      margin: auto;
+      margin-top: -10px;
+      margin-left: 35px;
+      padding: 50px;
+  } 
+
+  /* #inline:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  */
+
+  .underline {
+    text-decoration: underline;
+}
+
+
+
+ .imgButton{
+    text-align:center;
+}
+
+.imgContainer {
+    display: inline-block;
+    text-align: center;
+}

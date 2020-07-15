@@ -34,14 +34,11 @@
 
   </header>
   <main>
-    <h1>Pose Show Page</h1>
-
-    <h4><strong>Title</strong>: <%= pose.name %></h4>
-    <small>in sequence: <a href="/sequences/<%= sequence._id %>"><%= sequence.name %></a></small>
+    <h1><strong>About <%= pose.name %></strong></h1>
 
     <p><%= pose.benefits %></p>
     <p><%= pose.description %></p>
-    <p><%= pose.img %></p>
+    <p><img src="<%= pose.img %>" alt=""></p>
   
   </main>
   

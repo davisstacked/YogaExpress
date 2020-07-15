@@ -1,6 +1,11 @@
 body{
-    background-image: url(http://blog.hostbaby.com/wp-content/uploads/2014/03/Trees_1400x900-1024x658.png);
-    background-size: initial;
+    background-image: url(https://thumbs.gfycat.com/FoolhardyGlumAss-size_restricted.gif);
+    background-size: cover;
+    color: white;
+    margin-bottom: 100px;
+    color: #fff;
+    text-shadow: 0px -1px 4px white, 0px -2px 10px yellow, 0px -10px 20px #ff8000, 0px -18px 40px red;
+    font:'BlackJackRegular';
 }
 
 header {
@@ -45,8 +50,29 @@ ul {
   }
 
   img {
-    height: 150px;
-    width: 25%;
     border-radius: 50%;
 
   }
+
+  .card {
+    align-content: center;
+    color: white;
+  }
+
+  .card2 {
+    float: right;
+    position: relative;
+    top: -290px; 
+    color: white;
+  } 
+
+  .card3 {
+    float: right;
+    position: relative;
+    top: -290px; 
+    left: -330px;
+    color: white;
+    height: 0px;
+    width: 0px;
+
+  } 
