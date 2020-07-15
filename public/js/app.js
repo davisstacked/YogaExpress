@@ -3,10 +3,10 @@ console.log('as you wish');
 
 
 
-// Home Page 
+// // Home Page 
 
-const begin = document.querySelector(".begin")
+// const begin = document.querySelector(".begin")
 
-begin.addEventListener("click", () => {
-        res.render('sequences/new');
-    })
+// begin.addEventListener("click", () => {
+        
+//     })
