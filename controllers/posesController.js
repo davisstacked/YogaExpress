@@ -26,7 +26,7 @@ router.get('/:id', (req, res) => {
         if (err) return console.log(err);  
             res.render('poses/show', {
             pose: foundPose,
-                });
+            });
         });
     });
 
