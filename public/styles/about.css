@@ -45,8 +45,10 @@ ul {
   }
 
   img {
-    height: 150px;
-    width: 25%;
     border-radius: 50%;
 
+  }
+
+  .card {
+    align-content: center;
   }
