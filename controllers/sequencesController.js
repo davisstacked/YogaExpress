@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 
         //Log all sequences
         console.log('All Sequences = ', allSequences);
-        // Render the index template with all authors
+        // Render the index template with all sequences
         res.render('sequences/index', {
             sequences: allSequences,
         });
@@ -30,7 +30,7 @@ router.get('/new', (req, res) => {
 router.get('/:id', (req, res) => {
     //Query the database for the sequence by ID
     db.Sequence.findById(req.params.id)
-    .populate({path: 'articles'})
+    .populate({path: 'poses'})
     .exec((err, foundSequence) => {
         if (err) return console.log(err);
         res.render('sequences/show', {
@@ -92,7 +92,7 @@ router.delete('/:id', (req, res) => {
     db.Sequence.findByIdAndDelete(req.params.id, (err, deletedSequence) => {
       if (err) return console.log(err);
       console.log('The deleted Sequence = ', deletedSequence);
-      db.Article.deleteMany({
+      db.Pose.deleteMany({
         _id: {
           $in: deletedSequence.poses
         }

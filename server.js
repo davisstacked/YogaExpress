@@ -3,6 +3,7 @@ const methodOverride = require('method-override');
 const app = express();
 const PORT = process.env.PORT || 4000;
 
+
 // CONTROLLERS
 const sequencesCtrl = require('./controllers/sequencesController')
 const posesCtrl = require('./controllers/posesController');
@@ -49,6 +50,9 @@ app.use('/sequences', sequencesCtrl);
 
 // Poses Routes
 app.use('/poses', posesCtrl);
+
+
+
 
 // ----------------------------- SERVER LISTENER ------------------------------ //
 
