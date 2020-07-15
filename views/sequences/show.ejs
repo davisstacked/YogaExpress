@@ -51,7 +51,8 @@
       <h2>Poses in this sequence</h2>
       <ul>
         <% sequence.poses.forEach((pose, i) => { %>
-        <li><%= i %>. <a href="/poses/<%= pose._id %>"><%= pose.name %></a></li> 
+        <li><%= i %>.<img src="<%= pose.img %>" alt=""></p>
+     
         <% }) %>
       </ul>
     </section>
