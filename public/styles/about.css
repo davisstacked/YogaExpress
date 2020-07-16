@@ -1,11 +1,11 @@
 body{
-    background-image: url(https://thumbs.gfycat.com/FoolhardyGlumAss-size_restricted.gif);
-    background-size: cover;
-    color: white;
-    margin-bottom: 100px;
-    color: #fff;
-    text-shadow: 0px -1px 4px white, 0px -2px 10px yellow, 0px -10px 20px #ff8000, 0px -18px 40px red;
-    font:'BlackJackRegular';
+  background-image: url(https://strongandfreeyoga.files.wordpress.com/2016/12/cropped-websitebackground.jpg);
+  background-size: initial;
+  font:'BlackJackRegular';
+  background-repeat: no-repeat;
+  color: red;
+  text-shadow: 0px -1px 4px white, 0px -2px 10px yellow, 0px -10px 20px #ff8000, 0px -18px 40px red;
+
 }
 
 header {
@@ -16,12 +16,11 @@ header {
 
 nav {
     overflow: hidden;
-    background-color: #333;
 }
 
 nav a{
     text-align: center;
-    color: #f2f2f2;
+    color: red;
     padding: 14px 16px;
     text-decoration: none;
 }
@@ -56,14 +55,14 @@ ul {
 
   .card {
     align-content: center;
-    color: white;
+    color: red;
   }
 
   .card2 {
     float: right;
     position: relative;
     top: -290px; 
-    color: white;
+    color: red;
   } 
 
   .card3 {
@@ -71,8 +70,8 @@ ul {
     position: relative;
     top: -290px; 
     left: -330px;
-    color: white;
-    height: 0px;
+    color: red;
+    height: 100px;
     width: 0px;
 
   } 
@@ -83,4 +82,9 @@ ul {
     border-radius: 50%;
     margin-top: 10px;
     margin-right: 10px;
+  }
+
+  #imgg{
+   height: 300px;
+   margin: 100px 50px 10px 100px;
   }
