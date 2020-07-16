@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/posesShow.css">
   <title>Yoga Express</title>
 </head>
 <body>
@@ -31,15 +31,18 @@
         </li>
       </ul>
     </nav>
-
   </header>
-  <main>
+  <h1>Description</h1>
 
-    <h1><strong>About <%= pose.name %></strong></h1>
+  <main>
+    <p><img class="imgPose" src="<%= pose.img %>" alt=""></p>
+    <h1><strong> <%= pose.name %></strong></h1>
 
     <p><%= pose.benefits %></p>
     <p><%= pose.description %></p>
-    <p><img src="<%= pose.img %>" alt=""></p>
+    
+    
+
   
   </main>
   

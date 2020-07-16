@@ -31,6 +31,7 @@
       </ul>
     </nav>
   </header>
+  <h1>PICK YOUR POSES</h1>
   <main>
     <!-- <h2 class="underline">Poses</h2>
 
@@ -48,9 +49,19 @@
                 <% poses.forEach(pose => { %>
         <div class="imgContainer">
                   <div class="img">
-                    <a href="/poses/<%= pose._id %>">
+                    
+                    <div class="share">
+                      <span class="share-cover">
                       <img id="inline" src="<%= pose.img %>" alt="image">  
-                    </a>                  
+                    
+                      </span>
+                          <!-- Facebook Share Icon-->
+                          <a href="/poses/<%= pose._id %>" class="share-icon facebook">
+                          <button><%= pose.name %></button>
+                        </a>
+  
+                   </div>
+                    
                   </div>
                   <form action="/poses/<%= pose._id %>?_method=PUT" method="POST">
                     <div>

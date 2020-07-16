@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/styles/main.css">
+  <link rel="stylesheet" href="/styles/poses.css">
   <title>Yoga Express</title>
 </head>
 <body>
@@ -49,9 +49,9 @@
 
     <section>
       <h2>Poses in this sequence</h2>
-      <ul>
+      <ul class="list">
         <% sequence.poses.forEach((pose, i) => { %>
-        <li><%= i %>.<img src="<%= pose.img %>" alt=""></p>
+        <li><%= i %>.<img id="pad" src="<%= pose.img %>" alt=""></p>
      
         <% }) %>
       </ul>
