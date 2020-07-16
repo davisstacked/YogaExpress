@@ -60,22 +60,6 @@ router.put('/:id/', (req, res) => {
 
 
 
-// Poses Destroy  
-router.delete('/:id', (req, res) => {
-    db.Pose.findByIdAndDelete(req.params.id, (err, deletedPose) => {
-        if (err) return console.log(err);
-        console.log(deletedPose);
-        db.Sequence.findOne({'poses': req.params.id}, (err, foundSequence) => {
-            foundSequence.poses.remove(req.params.id);
-            foundSequence.save((err, updatedSequence) => {
-                console.log(updatedSequence);
-                res.redirect('/sequences') // i have this redirecting to sequences instead of poses. because you can only delete poses from sequences not from the site"
-            })
-        })
-    })
-})
-
-
 
 
 module.exports = router;

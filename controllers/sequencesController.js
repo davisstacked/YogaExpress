@@ -93,15 +93,10 @@ router.delete('/:id', (req, res) => {
     db.Sequence.findByIdAndDelete(req.params.id, (err, deletedSequence) => {
       if (err) return console.log(err);
       console.log('The deleted Sequence = ', deletedSequence);
-      db.Pose.deleteMany({
-        _id: {
-          $in: deletedSequence.poses
-        }
-      }, (err, data) => {
+        { $pull: {deletedSequence.poses; { $in: deletedSequence.poses}}}
         res.redirect('/Sequences');
       })
     });
-});
   
 
 
