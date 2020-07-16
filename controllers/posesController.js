@@ -35,29 +35,6 @@ router.get('/:id', (req, res) => {
 
 
 
-
-
-// // Poses Edit
-//     router.get('/:id/edit', (req, res) => { 
-//         db.Sequence.find({}, (err, allSequences) => {
-//             db.Sequence.findOne({'poses': req.params.id})
-//             .populate({
-//                 path: 'poses',
-//                 match: {_id: req.params.id}
-//             })
-//             .exec((err, foundPoseSequence) => {
-//                 res.render('./poses/edit', {
-//                     pose: foundPoseSequence.poses[0],
-//                     sequences: allSequences, 
-//                     poseSequence: foundPoseSequence
-//                 })
-//             })
-//         })
-//     })
-
-
-
-
 // POSES UPDATE
 router.put('/:id/', (req, res) => {
     db.Pose.findById(
@@ -97,12 +74,6 @@ router.delete('/:id', (req, res) => {
         })
     })
 })
-
-
-
-
-
-
 
 
 

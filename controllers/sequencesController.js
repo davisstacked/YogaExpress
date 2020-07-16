@@ -101,7 +101,8 @@ router.delete('/:id', (req, res) => {
         res.redirect('/Sequences');
       })
     });
-  });
+});
+  
 
 
   module.exports = router;
