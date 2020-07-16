@@ -35,29 +35,6 @@ router.get('/:id', (req, res) => {
 
 
 
-
-
-// // Poses Edit
-//     router.get('/:id/edit', (req, res) => { 
-//         db.Sequence.find({}, (err, allSequences) => {
-//             db.Sequence.findOne({'poses': req.params.id})
-//             .populate({
-//                 path: 'poses',
-//                 match: {_id: req.params.id}
-//             })
-//             .exec((err, foundPoseSequence) => {
-//                 res.render('./poses/edit', {
-//                     pose: foundPoseSequence.poses[0],
-//                     sequences: allSequences, 
-//                     poseSequence: foundPoseSequence
-//                 })
-//             })
-//         })
-//     })
-
-
-
-
 // POSES UPDATE
 router.put('/:id/', (req, res) => {
     db.Pose.findById(
@@ -80,28 +57,6 @@ router.put('/:id/', (req, res) => {
     })
 })
 })
-
-
-
-// Poses Destroy  
-router.delete('/:id', (req, res) => {
-    db.Pose.findByIdAndDelete(req.params.id, (err, deletedPose) => {
-        if (err) return console.log(err);
-        console.log(deletedPose);
-        db.Sequence.findOne({'poses': req.params.id}, (err, foundSequence) => {
-            foundSequence.poses.remove(req.params.id);
-            foundSequence.save((err, updatedSequence) => {
-                console.log(updatedSequence);
-                res.redirect('/sequences') // i have this redirecting to sequences instead of poses. because you can only delete poses from sequences not from the site"
-            })
-        })
-    })
-})
-
-
-
-
-
 
 
 
