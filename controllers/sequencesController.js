@@ -12,7 +12,7 @@ router.get('/', (req, res) => {
 
         //Log all sequences
         console.log('All Sequences = ', allSequences);
-        // Render the index template with all authors
+        // Render the index template with all sequences
         res.render('sequences/index', {
             sequences: allSequences,
         });
@@ -30,9 +30,10 @@ router.get('/new', (req, res) => {
 router.get('/:id', (req, res) => {
     //Query the database for the sequence by ID
     db.Sequence.findById(req.params.id)
-    .populate({path: 'articles'})
+    .populate({path: 'poses'})
     .exec((err, foundSequence) => {
         if (err) return console.log(err);
+        console.log(foundSequence);
         res.render('sequences/show', {
             sequence: foundSequence,
         });
@@ -49,7 +50,7 @@ router.post('/', (req, res) => {
     db.Sequence.create(req.body, (err, newSequence) => {
         if (err) return console.log(err);
 
-        //Log the new author
+        //Log the new sequence
         console.log('New Sequence = ', newSequence);
 
         res.redirect('/sequences');
@@ -92,15 +93,11 @@ router.delete('/:id', (req, res) => {
     db.Sequence.findByIdAndDelete(req.params.id, (err, deletedSequence) => {
       if (err) return console.log(err);
       console.log('The deleted Sequence = ', deletedSequence);
-      db.Article.deleteMany({
-        _id: {
-          $in: deletedSequence.poses
-        }
-      }, (err, data) => {
+        { $pull: {deletedSequence.poses; { $in: deletedSequence.poses}}}
         res.redirect('/Sequences');
       })
     });
-  });
+  
 
 
   module.exports = router;

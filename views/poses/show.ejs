@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/posesShow.css">
+  <title>Yoga Express</title>
+</head>
+<body>
+  <header>
+
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/About">About</a>
+        </li>
+        <li>
+          <a href="/history">History</a>
+        </li>
+        <li>
+          <a href="/sequences">Sequences</a>
+        </li>
+        <li>
+          <a href="/sequences/new">New Sequence</a>
+        </li>
+        <li>
+          <a href="/poses">Poses</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <h1>Description</h1>
+
+  <main>
+    <p><img class="imgPose" src="<%= pose.img %>" alt=""></p>
+    <h1><strong> <%= pose.name %></strong></h1>
+
+    <p><%= pose.benefits %></p>
+    <p><%= pose.description %></p>
+    
+    
+
+  
+  </main>
+  
+</body>
+</html>
+

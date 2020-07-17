@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/poses.css">
+  <title>Yoga Express</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/sequences">Sequences</a>
+        </li>
+        <li>
+          <a href="/sequences/new">New Sequence</a>
+        </li>
+        <li>
+          <a href="/poses">Poses</a>
+        </li>
+        <li>
+            <a href="/about">About</a>
+        </li>
+        <li>
+            <a href="/history">History of Yoga</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Show Sequence Page</h1>
+
+    <h4><%= sequence.name %></h4>
+    <p>created: <%= new Date(sequence.createdAt).toLocaleDateString() %></p>
+
+    <form style="display: inline;" action="/sequences/<%= sequence._id %>?_method=DELETE" method="POST">
+      <button type="submit">Delete</button>
+    </form>
+
+
+    <a href="/sequences/<%= sequence._id %>/edit">
+      <button>Edit</button>
+    </a>
+
+    <section>
+      <h2>Poses in this sequence</h2>
+      <ul class="list">
+        <% sequence.poses.forEach((pose, i) => { %>
+        <li><%= i %>.<img id="pad" src="<%= pose.img %>" alt=""></p>
+     
+        <% }) %>
+      </ul>
+    </section>
+  </main>
+
+</body>
+</html>

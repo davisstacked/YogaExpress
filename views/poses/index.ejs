@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/poses.css">
+  <title>Yoga Express</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/sequences">Sequences</a>
+        </li>
+        <li>
+          <a href="/sequences/new">New Sequence</a>
+        </li>
+        <li>
+          <a href="/poses">Poses</a>
+        </li>
+        <li>
+            <a href="/about">About</a>
+        </li>
+        <li>
+            <a href="/history">History of Yoga</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <h1>PICK YOUR POSES</h1>
+  <main>
+    <!-- <h2 class="underline">Poses</h2>
+
+    <% poses.forEach(pose => { %>
+          <h4>
+             <a href="/poses/<%= pose._id %>">
+              <img id="inline" src="<%= pose.img %>" alt="image">  
+            </a>
+         </h4>   
+        <% }) %>  -->
+
+        <table>
+          <tr>
+              <td>
+                <% poses.forEach(pose => { %>
+        <div class="imgContainer">
+                  <div class="img">
+                    
+                    <div class="share">
+                      <span class="share-cover">
+                      <img id="inline" src="<%= pose.img %>" alt="image">  
+                    
+                      </span>
+                          <!-- Facebook Share Icon-->
+                          <a href="/poses/<%= pose._id %>" class="share-icon facebook">
+                          <button><%= pose.name %></button>
+                        </a>
+  
+                   </div>
+                    
+                  </div>
+                  <form action="/poses/<%= pose._id %>?_method=PUT" method="POST">
+                    <div>
+                      <label for="sequence">Sequence</label>
+                      <select name="sequenceId" id="sequence">
+                        <% sequences.forEach(sequence => { %>
+                          <option value="<%= sequence._id %>"><%= sequence.name %></option>
+                        <% }) %>
+                      </select>
+                    </div>
+                    <button type="submit">Add to Sequence</button>
+                  </form>
+                  </div>
+           </div>
+           <% }) %>  
+              </td>
+          </tr>
+      </table>
+  </main>
+
+</body>
+</html>

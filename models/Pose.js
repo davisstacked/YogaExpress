@@ -1,13 +1,16 @@
 const mongoose = require('mongoose');
 
 const PoseSchema = new mongoose.Schema({
-    title: {
+    name: {
         type: String,
         required: true,
     },
-    difficulty: String,
-    Benefits: [String],
-    Description: String
+    benefits: [String],
+    description: String,
+    img: String,
 }, {timestamps: true});
 
-module.exports = mongoose.model('Pose', PoseSchema);
+const Pose = mongoose.model('Pose', PoseSchema);
+
+
+module.exports = Pose;

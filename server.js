@@ -3,6 +3,7 @@ const methodOverride = require('method-override');
 const app = express();
 const PORT = process.env.PORT || 4000;
 
+
 // CONTROLLERS
 const sequencesCtrl = require('./controllers/sequencesController')
 const posesCtrl = require('./controllers/posesController');
@@ -12,7 +13,8 @@ app.set('view engine', 'ejs');
 
 // ----------------------------- MIDDLEWARE ------------------------------------- //
 
-app.use(express.static(`$(_dirname)/public`));
+//app.use(express.static(`$(_dirname)/public`));
+app.use(express.static(__dirname + '/public'));
 
 // Method Override
 app.use(methodOverride('_method'));
@@ -33,11 +35,24 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+// History Route
+app.get('/history', (req, res) => {
+    res.render('history');
+});
+
+// About Route
+app.get('/about', (req, res) => {
+    res.render('about');
+});
+
 // Sequences Routes 
 app.use('/sequences', sequencesCtrl);
 
 // Poses Routes
 app.use('/poses', posesCtrl);
+
+
+
 
 // ----------------------------- SERVER LISTENER ------------------------------ //
 

@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/poses.css">
+  <title>Yoga Express</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/sequences">Sequences</a>
+        </li>
+        <li>
+          <a href="/sequences/new">New Sequence</a>
+        </li>
+        <li>
+          <a href="/poses">Poses</a>
+        </li>
+        <li>
+            <a href="/about">About</a>
+        </li>
+        <li>
+            <a href="/history">History of Yoga</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Edit Sequence Page</h1>
+
+    <form action="/sequences/<%= sequence._id %>?_method=PUT" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" value="<%= sequence.name %>" />
+        <!-- maybe need a part for poses here? -->
+      <button type="submit">Edit Sequence</button>
+    </form>
+  </main>
+
+</body>
+</html>
